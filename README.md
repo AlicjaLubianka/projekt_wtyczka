@@ -18,10 +18,10 @@ Wtyczka oferuje możliwość wykonania następujących operacji w programie QGIS
 - odznaczanie wszystkich zaznaczonych punktów.
 
 --> **Program pozwala również na zmianę jednostek dla wszystkich obliczeń**:
-- różnica wysokości: metry [m], centymetry [cm], milimetry [mm],
-- odległość: metry [m], kilometry [km],
-- azymut oraz azymut odwrotny: radiany [rad], stopnie [deg], grady [g],
-- pole powierzchni: metry kwadratowe [m2], ary [a], hektary [ha].
+- różnica wysokości: *metry [m], centymetry [cm], milimetry [mm],*
+- odległość: *metry [m], kilometry [km],*
+- azymut oraz azymut odwrotny: *radiany [rad], stopnie [deg], grady [g],*
+- pole powierzchni: *metry kwadratowe [m2], ary [a], hektary [ha].*
 
 
 ## Wymagania
@@ -37,7 +37,7 @@ Program umożliwia wykonywanie wymienionych operacji w określonej wersji QGIS.
 Poniżej znajduje się opis funkcji każdego przycisku oraz instrukcja dotycząca wczytywania pliku.
 
 --> **Pole wyboru "Aktualna warstwa":**
-- To pole pozwala wybrać warstwę, na której będą wykonywane operacje za pomocą naszej wtyczki
+- To pole pozwala wybrać warstwę, na której będą wykonywane operacje za pomocą naszej wtyczki.
 
 --> **Licz elementy:**
 - Po naciśnięciu tego przycisku program zwraca liczbę zaznaczonych elementów.
@@ -83,26 +83,30 @@ Po naciśnięciu przycisku pojawi się okno dialogowe, w którym należy wybrać
 
 
 ## Znane błędy i nietypowe zachowania
-- Jeśli użytkownik wybierze opcję "Różnica wysokości" lub "Odległość" lub "Azymut" mając zaznaczoną inną ilość punktów niż 2, program wyświetli komunikat na dole okna: "Zaznacz dokładnie 2 punkty!"
+- Jeśli użytkownik wybierze opcję **"Różnica wysokości"** lub **"Odległość"** lub **"Azymut"** mając zaznaczoną **inną ilość punktów niż 2**,  
+  program wyświetli komunikat na dole okna: **"Zaznacz dokładnie 2 punkty!"**
+  
+- W przypadku, gdy punkty wybrane przez użytkownika do obliczenia różnicy wysokości nie mają atrybutu wysokości, program wyświetli ostrzeżenie w głównym interfejsie QGIS,  
+  a także komunikat na dole okna: **"Wybrane punkty nie mają atrybutu wysokości."**
 
-- W przypadku, gdy punkty wybrane przez użytkownika do obliczenia różnicy wysokości nie mają atrybutu wysokości, program wyświetli ostrzeżenie w głównym interfejsie QGIS, a także komunikat na dole okna: "Wybrane punkty nie mają atrybutu wysokości."
+- Gdy użytkownik wybierze dwa punkty o takich samych współrzędnych i skorzysta z opcji **"Azymut"**, program wyświetli komunikat na dole okna: **"Punkty są identyczne!"**
 
-- Gdy użytkownik wybierze dwa punkty o takich samych współrzędnych i skorzysta z opcji "Azymut", program wyświetli komunikat na dole okna: "Punkty są identyczne!"
+- Przy korzystaniu z opcji **"Pole powierzchni"**, jeśli są zaznaczone **mniej niż 3 punkty**, program wyświetli komunikat na dole okna: **"Zaznacz więcej punktów."**
 
-- Przy korzystaniu z opcji "Pole powierzchni", jeśli są zaznaczone mniej niż 3 punkty, program wyświetli komunikat na dole okna: "Zaznacz więcej punktów."
+- Podobnie, przy użyciu funkcji **"Rysuj poligon"**, jeśli zaznaczonych **jest mniej niż 3 punkty**, program wyświetli komunikat na dole okna: **"Za mało punktów."**
 
-- Podobnie, przy użyciu funkcji "Rysuj poligon", jeśli zaznaczonych jest mniej niż 3 punkty, program wyświetli komunikat na dole okna: "Za mało punktów."
+- Jeśli po naciśnięciu przycisku **"Rysuj poligon"** pojawi się jeden z błędów:
 
-- Jeśli po naciśnięciu przycisku "Rysuj poligon" pojawi się jeden z błędów:
-
-	"Nieprawidłowa geometria poligonu",  
-	"Nie udało się utworzyć warstwy poligonowej",  
-	"Nie udało się dodać funkcji do warstwy poligonowej",  
+	**"Nieprawidłowa geometria poligonu",**  
+	**"Nie udało się utworzyć warstwy poligonowej"**,  
+	**"Nie udało się dodać funkcji do warstwy poligonowej"**,  
    oznacza to, że utworzenie poligonu z wybranych punktów jest prawdopodobnie niemożliwe.
 
-- W przypadku użycia funkcji "Wczytaj plik" dla pliku z więcej niż dwiema kolumnami danych lub z błędnie oddzielonymi współrzędnymi, program wyświetli ostrzeżenie w głównym interfejsie QGIS: "Wybrany plik ma więcej niż 2 kolumny danych."
+- W przypadku użycia funkcji **"Wczytaj plik"** dla pliku z **więcej niż dwiema kolumnami danych lub z błędnie oddzielonymi współrzędnymi**,  
+  program wyświetli ostrzeżenie w głównym interfejsie QGIS: **"Wybrany plik ma więcej niż 2 kolumny danych."**
 
-- Jeśli podczas próby wczytania pliku z danymi za pomocą "Wczytaj plik" pojawi się komunikat błędu konwersji w głównym interfejsie QGIS: "Wystąpił błąd podczas konwersji współrzędnych.", należy spróbować ponownie wczytać plik lub sprawdzić, czy ma on poprawną formę.
+- Jeśli podczas próby wczytania pliku z danymi za pomocą **"Wczytaj plik"** pojawi się komunikat błędu konwersji w głównym interfejsie QGIS:  
+  **"Wystąpił błąd podczas konwersji współrzędnych."**, należy spróbować ponownie wczytać plik lub sprawdzić, czy ma on poprawną formę.
 
 
 
