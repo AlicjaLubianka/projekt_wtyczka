@@ -65,14 +65,15 @@ Poniżej znajduje się opis funkcji każdego przycisku oraz instrukcja dotycząc
 --> **Odznacz wszystko**
 - Przycisk ten odznacza wszystkie zaznaczone punkty.
 
-Przycisk ten służy do wczytywania plików .txt lub .csv zawierających współrzędne punktów. Współrzędne powinny być zapisane w pliku w taki sposób, że każda para współrzędnych X,Y jest umieszczona w nowym wierszu, a separator dziesiętny to kropka, natomiast współrzędne X i Y oddziela przecinek. Przykład dla układu PL-2000:
+--> **Wczytaj plik**
+- Przycisk ten służy do wczytywania plików .txt lub .csv zawierających współrzędne punktów. Współrzędne powinny być zapisane w pliku w taki sposób, że każda para współrzędnych X,Y jest umieszczona w nowym wierszu, a separator dziesiętny to kropka, natomiast współrzędne X i Y oddziela przecinek. Przykład dla układu PL-2000:
 
-6505557.947008692,5698134.984363967
-6494228.235143422,5698070.40673962
-6495892.9210715005,5700279.960207025
-6503651.900047439,5699120.895453971
-6495434.756193247,5699114.967959793
-6495761.020010711,5700346.070648875
+6505557.947008692,5698134.984363967  
+6494228.235143422,5698070.40673962  
+6495892.9210715005,5700279.960207025  
+6503651.900047439,5699120.895453971  
+6495434.756193247,5699114.967959793  
+6495761.020010711,5700346.070648875  
 
 Po naciśnięciu przycisku pojawi się okno dialogowe, w którym należy wybrać układ współrzędnych. Po wyborze układu, wyświetli się okno umożliwiające wybór pliku z dowolnego miejsca na urządzeniu. 
 
@@ -82,3 +83,27 @@ Po naciśnięciu przycisku pojawi się okno dialogowe, w którym należy wybrać
 
 
 ## Znane błędy i nietypowe zachowania
+- Jeśli użytkownik wybierze opcję "Różnica wysokości" lub "Odległość" lub "Azymut" mając zaznaczoną inną ilość punktów niż 2, program wyświetli komunikat na dole okna: "Zaznacz dokładnie 2 punkty!"
+
+- W przypadku, gdy punkty wybrane przez użytkownika do obliczenia różnicy wysokości nie mają atrybutu wysokości, program wyświetli ostrzeżenie w głównym interfejsie QGIS, a także komunikat na dole okna: "Wybrane punkty nie mają atrybutu wysokości."
+
+- Gdy użytkownik wybierze dwa punkty o takich samych współrzędnych i skorzysta z opcji "Azymut", program wyświetli komunikat na dole okna: "Punkty są identyczne!"
+
+- Przy korzystaniu z opcji "Pole powierzchni", jeśli są zaznaczone mniej niż 3 punkty, program wyświetli komunikat na dole okna: "Zaznacz więcej punktów."
+
+- Podobnie, przy użyciu funkcji "Rysuj poligon", jeśli zaznaczonych jest mniej niż 3 punkty, program wyświetli komunikat na dole okna: "Za mało punktów."
+
+- Jeśli po naciśnięciu przycisku "Rysuj poligon" pojawi się jeden z błędów:
+
+	"Nieprawidłowa geometria poligonu",  
+	"Nie udało się utworzyć warstwy poligonowej",  
+	"Nie udało się dodać funkcji do warstwy poligonowej",  
+   oznacza to, że utworzenie poligonu z wybranych punktów jest prawdopodobnie niemożliwe.
+
+- W przypadku użycia funkcji "Wczytaj plik" dla pliku z więcej niż dwiema kolumnami danych lub z błędnie oddzielonymi współrzędnymi, program wyświetli ostrzeżenie w głównym interfejsie QGIS: "Wybrany plik ma więcej niż 2 kolumny danych."
+
+- Jeśli podczas próby wczytania pliku z danymi za pomocą "Wczytaj plik" pojawi się komunikat błędu konwersji w głównym interfejsie QGIS: "Wystąpił błąd podczas konwersji współrzędnych.", należy spróbować ponownie wczytać plik lub sprawdzić, czy ma on poprawną formę.
+
+
+
+
