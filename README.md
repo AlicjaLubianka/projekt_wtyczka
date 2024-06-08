@@ -33,5 +33,52 @@ Wtyczka oferuje możliwość wykonania następujących operacji w programie QGIS
 Program został napisany dla systemu operacyjnego Windows 11.
 
 ## Instrukcja obsługi
+Program umożliwia wykonywanie wymienionych operacji w określonej wersji QGIS. 
+Poniżej znajduje się opis funkcji każdego przycisku oraz instrukcja dotycząca wczytywania pliku.
+
+--> **Pole wyboru "Aktualna warstwa":**
+- To pole pozwala wybrać warstwę, na której będą wykonywane operacje za pomocą naszej wtyczki
+
+--> **Licz elementy:**
+- Po naciśnięciu tego przycisku program zwraca liczbę zaznaczonych elementów.
+
+--> **Różnica wysokości:**
+- Przycisk jest przeznaczony dla punktów z atrybutem wysokości oznaczonym jako **"h"**. Po naciśnięciu przycisku, po jego prawej stronie program wyświetla różnicę wysokości między zaznaczonymi punktami w metrach *[m]*. Po prawej stronie okna pojawiają się również trzy przyciski umożliwiające zmianę jednostki wyniku. Po wybraniu jednej z nich program pokaże wynik w odpowiedniej jednostce, gdzie: *[m] - metry, [cm] - centymetry, [mm] - milimetry.*
+
+--> **Pole powierzchni:**
+- Po naciśnięciu tego przycisku, po jego prawej stronie, program wyświetli pole powierzchni obszaru utworzonego przez zaznaczone punkty w metrach kwadratowych *[m2]*. Dodatkowo, po prawej stronie okna, pojawią się przyciski umożliwiające zmianę jednostki wyświetlanego wyniku. Po wybraniu jednej z opcji, program wyświetli wynik w wybranej jednostce: *[m2] - metry kwadratowe, [ha] - hektary, [a] - ary.*
+
+--> **Odległość:**
+- Po naciśnięciu tego przycisku, z jego prawej strony wyświetlona zostanie odległość między zaznaczonymi punktami w metrach. Dodatkowo, po prawej stronie okna, pojawią się przyciski umożliwiające zmianę jednostki wyniku. Po wyborze odpowiedniego przycisku, program pokaże wynik w wybranej jednostce: *[m] - metry, [km] - kilometry.*
+
+--> **Azymut**
+- Po naciśnięciu przycisku, z jego prawej strony wyświetlona zostanie wartość azymutu między zaznaczonymi punktami w radianach. Po prawej stronie okna pojawią się przyciski do zmiany jednostki wyniku. Po wybraniu odpowiedniego przycisku, program wyświetli wynik w jednej z wybranych jednostek: *[g] - grady, [deg] - stopnie, [rad] - radiany.*
+
+- Pod wyświetlonym wynikiem pojawi się przycisk "Azymut odwrotny". Po jego naciśnięciu, w miejscu przycisku pojawi się wartość azymutu odwrotnego, a sam przycisk zniknie. Przy zmianie jednostki wyniku za pomocą przycisków radiowych, obie wartości - azymut i azymut odwrotny - zostaną przedstawione w wybranej jednostce.
+
+--> **Rysuj poligon**
+- Ten przycisk dodaje nową warstwę z narysowanym poligonem łączącym zaznaczone punkty.
+
+--> **Wyczyść wyniki**
+- Po naciśnięciu tego przycisku wszystkie wyświetlane wyniki zostaną usunięte. Również wszelkie komunikaty o wynikach lub błędach, wyświetlane w górnej części interfejsu QGIS, zostaną usunięte.
+
+--> **Odznacz wszystko**
+- Przycisk ten odznacza wszystkie zaznaczone punkty.
+
+Przycisk ten służy do wczytywania plików .txt lub .csv zawierających współrzędne punktów. Współrzędne powinny być zapisane w pliku w taki sposób, że każda para współrzędnych X,Y jest umieszczona w nowym wierszu, a separator dziesiętny to kropka, natomiast współrzędne X i Y oddziela przecinek. Przykład dla układu PL-2000:
+
+6505557.947008692,5698134.984363967
+6494228.235143422,5698070.40673962
+6495892.9210715005,5700279.960207025
+6503651.900047439,5699120.895453971
+6495434.756193247,5699114.967959793
+6495761.020010711,5700346.070648875
+
+Po naciśnięciu przycisku pojawi się okno dialogowe, w którym należy wybrać układ współrzędnych. Po wyborze układu, wyświetli się okno umożliwiające wybór pliku z dowolnego miejsca na urządzeniu. 
+
+**1.** Dla układu PL-2000: po wyborze pliku program zapyta o strefę, w której znajdują się wprowadzone punkty. Po wyborze jednej z czterech dostępnych stref (strefa 5, strefa 6, strefa 7, strefa 8), program załaduje i wyświetli punkty na nowo utworzonej warstwie.
+
+**2.** Dla układu PL-1992: po wybraniu pliku program załaduje punkty i wyświetli je na nowo utworzonej warstwie. 
+
 
 ## Znane błędy i nietypowe zachowania
